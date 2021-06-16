@@ -24,10 +24,10 @@ final class UserMigration extends AbstractMigration
               ->addColumn('address1', 'string', ['limit' => 191])
               ->addColumn('address2', 'string', ['limit' => 100])
               ->addColumn('city', 'string', ['limit' => 30])
-              ->addColumn('state', 'string', ['limit' => 191])
+              ->addColumn('state', 'string', ['limit' => 2])
               ->addColumn('zip', 'string', ['limit' => 9])
               ->addColumn('country', 'string', ['limit' => 191,'default' => 'US'])
-              ->addColumn('created', 'datetime')
+              ->addColumn('created', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
               ->addColumn('updated', 'datetime', ['null' => true])
               ->create();
     }

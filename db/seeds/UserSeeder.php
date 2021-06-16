@@ -37,9 +37,9 @@ class UserSeeder extends AbstractSeed
                 'address1'    => $faker->streetAddress(),
                 'address2'    => '',
                 'city'    => $faker->city(),
-                'state'    => $faker->state(),
+                'state'    => $faker->stateAbbr(),
                 'zip'    => $zip,
-                'created' => date('Y-m-d H:i:s'),
+                // 'created' => date('Y-m-d H:i:s'),
                 'updated' => NULL,
             ];
         }

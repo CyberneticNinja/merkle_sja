@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -17,6 +19,9 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('hello', function () {
-    return 'Holla Mundo';
-});
+$router->get('/register', 'RegistrationController@index');
+$router->post('/register','RegistrationController@store');
+
+// $router->post('/form',function(Request $request) {
+//     dd($request->input('first_name'));
+// });
