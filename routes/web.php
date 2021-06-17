@@ -15,12 +15,23 @@ use Illuminate\Http\Request;
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+// $router->get('/', function () use ($router) {
+//     return $router->app->version();
+// });
+$router->get('/', function(){ 
+    return view('home');
 });
-
+$router->get('/test', function(){ 
+    if(isset($_COOKIE['username']))
+    {
+        dd($_COOKIE);
+    }
+});
 $router->get('/register', 'RegistrationController@index');
 $router->post('/register','RegistrationController@store');
+$router->get('/login','AdminController@show');
+$router->post('/login','AdminController@store');
+$router->get('/adminHome','AdminController@home');
 
 // $router->post('/form',function(Request $request) {
 //     dd($request->input('first_name'));

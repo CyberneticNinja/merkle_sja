@@ -70,9 +70,9 @@ Class RegistrationController extends Controller
             [
                 trim(addslashes($request->input('first_name'))),
                 trim(addslashes($request->input('last_name'))),
-                trim($request->input('address1')),
-                trim($request->input('address2')),
-                trim($request->input('city')),
+                trim(addslashes($request->input('address1'))),
+                trim(addslashes($request->input('address2'))),
+                trim(addslashes($request->input('city'))),
                 trim($request->input('state')),
                 trim($request->input('zip')),
             ]);
@@ -82,19 +82,19 @@ Class RegistrationController extends Controller
     }
 
     //confirmation
-    public function confirmation(Request $request)
-    {
-        return view('registration_confirmation',
-        [
-            'first_name' => $request->input('first_name'),
-            'last_name' => $request->input('last_name'),
-            'address1' => $request->input('address1'),
-            'address2' => $request->input('address2'),
-            'city' => $request->input('city'),
-            'state' => $request->input('state'),
-            'zip' => $request->input('zip'),            
-        ]);
-    }
+    // public function confirmation(Request $request)
+    // {
+    //     return view('registration_confirmation',
+    //     [
+    //         'first_name' => $request->input('first_name'),
+    //         'last_name' => $request->input('last_name'),
+    //         'address1' => $request->input('address1'),
+    //         'address2' => $request->input('address2'),
+    //         'city' => $request->input('city'),
+    //         'state' => $request->input('state'),
+    //         'zip' => $request->input('zip'),            
+    //     ]);
+    // }
 
     public function show(Request $request)
     {

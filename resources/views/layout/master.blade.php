@@ -13,7 +13,7 @@
         }
         form
         {
-            width:75%;
+            width:50%;
         }
         #warning
         {
@@ -35,7 +35,20 @@
                         <h2>Admin</h2>
                     </p>
                     <ul class="menu-list">
-                        <li><a>Login</a></li>
+                        @php
+                            if(isset($_COOKIE['username']))
+                            {
+                                $url = 'http://localhost/merkle_sja/public/adminHome';
+                                echo '<li><a href="'.$url.'">Admin Home</a></li>';
+                            }
+                        @endphp
+                        @php
+                            if(!isset($_COOKIE['username']))
+                            {
+                                $url = 'http://localhost/merkle_sja/public/login';
+                                echo '<li><a href="'.$url.'">Login</a></li>';
+                            }
+                        @endphp 
                     </ul>            
                 </aside>
             </div>
