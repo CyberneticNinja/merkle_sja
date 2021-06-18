@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'Registration Form')
+@section('title', 'Login Form')
 
 
 @section('content')
@@ -17,7 +17,7 @@
   }
   }
 </script>
-    <form action="http://localhost/merkle_sja/public/login" method="POST" id="form">
+    <form action="http://45.77.75.226/merkle_sja/public/login" method="POST" id="form">
         <h1>Registration Form</h1>
         <div class="field">
         <label class="label">Username</label>

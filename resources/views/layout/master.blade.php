@@ -29,7 +29,8 @@
                 <h1>Menu</h1>
                 <aside class="menu">
                     <ul class="menu-list">
-                    <li><a href="http://localhost/merkle_sja/public/register">Register</a></li>
+		<li><a href="http://45.77.75.226/merkle_sja/public">Home</a></li>
+                  <li><a href="http://45.77.75.226/merkle_sja/public/register">Register</a></li>
                     </ul>
                     <p class="menu-label">
                         <h2>Admin</h2>
@@ -38,14 +39,14 @@
                         @php
                             if(isset($_COOKIE['username']))
                             {
-                                $url = 'http://localhost/merkle_sja/public/adminHome';
+                                $url = 'http://45.77.75.226/merkle_sja/public/adminHome';
                                 echo '<li><a href="'.$url.'">Admin Home</a></li>';
                             }
                         @endphp
                         @php
                             if(!isset($_COOKIE['username']))
                             {
-                                $url = 'http://localhost/merkle_sja/public/login';
+                                $url = 'http://45.77.75.226/merkle_sja/public/login';
                                 echo '<li><a href="'.$url.'">Login</a></li>';
                             }
                         @endphp 

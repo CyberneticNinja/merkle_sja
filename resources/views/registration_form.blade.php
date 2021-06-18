@@ -17,7 +17,7 @@
   }
   }
 </script>
-    <form action="http://localhost/merkle_sja/public/register" method="POST" id="form">
+    <form action="http://45.77.75.226/merkle_sja/public/register" method="POST" id="form">
         <h1>Registration Form</h1>
         <div class="field">
             <label class="label">First Name</label>
