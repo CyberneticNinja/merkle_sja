@@ -24,7 +24,7 @@ $router->get('/', function(){
 $router->get('/test', function(){ 
     if(isset($_COOKIE['username']))
     {
-        dd($_COOKIE);
+        //dd($_COOKIE);
     }
 });
 $router->get('/register', 'RegistrationController@index');
@@ -32,7 +32,7 @@ $router->post('/register','RegistrationController@store');
 $router->get('/login','AdminController@show');
 $router->post('/login','AdminController@store');
 $router->get('/adminHome','AdminController@home');
-
+$router->get('/logout','AdminController@logout');
 // $router->post('/form',function(Request $request) {
 //     dd($request->input('first_name'));
 // });

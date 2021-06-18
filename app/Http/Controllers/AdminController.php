@@ -73,5 +73,13 @@ Class AdminController extends Controller
         // echo 'we are in AdminController function show()';
         return view('login_form');
     }
+	//logout
+	public function logout()
+	{
+    	
+    	setcookie('username',"",1,'/');
+    	unset($_COOKIE['username']);
+    	return redirect('/');
+	}
     
 }

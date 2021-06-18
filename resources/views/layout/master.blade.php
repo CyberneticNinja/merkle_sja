@@ -36,6 +36,18 @@
                         <h2>Admin</h2>
                     </p>
                     <ul class="menu-list">
+                    	@php
+                        	if(!isset($_COOKIE['username']))
+                        	{
+                            	$url = 'http://45.77.75.226/merkle_sja/public/login';
+                            	echo '<li><a href="'.$url.'">Login</a></li>';
+                        	}
+                        	else
+                        	{
+                            	$url = 'http://45.77.75.226/merkle_sja/public/logout';
+                            	echo '<li><a href="'.$url.'">Logout</a></li>';
+                        	}
+                    	@endphp
                         @php
                             if(isset($_COOKIE['username']))
                             {
@@ -43,13 +55,7 @@
                                 echo '<li><a href="'.$url.'">Admin Home</a></li>';
                             }
                         @endphp
-                        @php
-                            if(!isset($_COOKIE['username']))
-                            {
-                                $url = 'http://45.77.75.226/merkle_sja/public/login';
-                                echo '<li><a href="'.$url.'">Login</a></li>';
-                            }
-                        @endphp 
+                       
                     </ul>            
                 </aside>
             </div>
