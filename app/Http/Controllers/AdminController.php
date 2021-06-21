@@ -53,7 +53,12 @@ Class AdminController extends Controller
         else
         {
             $user = DB::select('select * from admin where username = ?', [$request->input('username')]);
-            if(password_verify($request->input('password'), $user[0]->password))
+
+	    if(empty($user))
+	    {
+		 return view('errors',['errors' => array('Username and Password combination cannot be found')]);
+	    }
+            else if(password_verify($request->input('password'), $user[0]->password))
             {
                 setcookie('username', Crypt::encrypt($request->input('username')), time() + (86400 * 30), "/"); // 86400 = 1 day
                 return redirect('/');
